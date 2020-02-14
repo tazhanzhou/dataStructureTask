@@ -45,7 +45,7 @@ public class Task1 {
 			return isEqualSplit(array, n, m - 1);
 
 	}
-	
+	//calculate the sum of whole array
 	public int arraySum(int[] array, int n) {
 		if (n == 0) {
 			return 0;
@@ -54,6 +54,7 @@ public class Task1 {
 		}
 	}
 
+	//calculate the sum before m
 	public int frontSum(int[] array, int m) {
 		if (m == 1) {
 			return array[0];
@@ -63,6 +64,7 @@ public class Task1 {
 
 	}
 
+	//calculate the sum after m
 	public int rearSum(int[] array, int n, int m) {
 		if (m == 1) {
 			return array[n - m];
