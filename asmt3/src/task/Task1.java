@@ -1,6 +1,8 @@
 package task;
 
 public class Task1 {
+	
+	//task 1
 	public int countLetter(String str) {
 		if (str.length() < 3) {
 			return 0;
@@ -14,6 +16,7 @@ public class Task1 {
 		return countLetter(str.substring(1));
 	}
 
+	//task2
 	public int count11(String str) {
 		if (str.length() < 2) {
 			return 0;
@@ -25,6 +28,24 @@ public class Task1 {
 		return count11(str.substring(1));
 	}
 
+	//task3
+	
+	public boolean isEqualSplit(int[] array, int n, int m) {
+		//here n=array.length, m = n-1, m is where the array be cut.
+		if (arraySum(array, n) % 2 != 0) {
+			return false;
+		}
+
+		if (m == 0) {
+			return false;
+		}
+		if (frontSum(array, m) == rearSum(array, n, n - m)) {
+			return true;
+		} else
+			return isEqualSplit(array, n, m - 1);
+
+	}
+	
 	public int arraySum(int[] array, int n) {
 		if (n == 0) {
 			return 0;
@@ -50,20 +71,5 @@ public class Task1 {
 		}
 	}
 
-	public boolean isEqualSplit(int[] array, int n) {
-
-		boolean isEqual = false;
-
-		if (arraySum(array, n) % 2 != 0) {
-			isEqual = false;
-		} else {
-			for (int i = 1; i < n; i++) {
-				if (frontSum(array, i) == rearSum(array, n, n-i)) {
-					isEqual = true;
-				}
-			}
-
-		}
-		return isEqual;
-	}
+	
 }
